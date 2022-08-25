@@ -11,16 +11,24 @@ public class PlayerMovement : MonoBehaviour
     public float _sidewaysSpeed;
 
 
-    void Update()
-    {
-        transform.Translate(_speed * Time.deltaTime * Vector3.forward, Space.World);
-        if (Input.GetKey(KeyCode.A) && transform.position.x > _leftSide)
-        {
-            transform.Translate(_sidewaysSpeed * Time.deltaTime * Vector3.left);
-        }
-        if (Input.GetKey(KeyCode.D) && transform.position.x < _rightSide)
-        {
-            transform.Translate(_sidewaysSpeed * -1 * Time.deltaTime * Vector3.left);
-        }
-    }
+        //if (Input.GetMouseButton(0))
+        //{
+        //    Vector3 delta = Input.mousePosition - _previousMousePosition;
+        //    if (this.gameObject.transform.position.x > _leftSide)
+        //    {
+        //        transform.Translate(Vector3.left * Time.deltaTime * _sidewaysSpeed);
+        //    }
+
+        //}
+        //_previousMousePosition = Input.mousePosition;
+        //if (Input.GetMouseButton(0))
+        //{
+        //    Vector3 delta = Input.mousePosition - _previousMousePosition;
+        //    if (this.gameObject.transform.position.x < _rightSide)
+        //    {
+        //        transform.Translate(Vector3.right * Time.deltaTime * _sidewaysSpeed * -1);
+        //    }
+
+        //}
+        //_previousMousePosition = Input.mousePosition;
 }
