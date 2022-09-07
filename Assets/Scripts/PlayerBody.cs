@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerBody : MonoBehaviour
 {
-    [SerializeField] private int _segmentsNumber;
+    
     [SerializeField] private Segment _segment;
-    public List<Segment> SegmentAssembly()
+    public List<Segment> SegmentAssembly(int count)
     {
         List<Segment> segments = new List<Segment>();
-        for (int i = 0; i < _segmentsNumber; i++)
+        for (int i = 0; i < count; i++)
         {
             segments.Add(Instantiate(_segment, transform));
         }

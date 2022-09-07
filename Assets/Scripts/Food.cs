@@ -1,9 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Food : MonoBehaviour
 {
+    [SerializeField] private TMP_Text _counter;
+    [SerializeField] private Vector2Int _foodRange;
+    private int _foodCount;
+
+
+    private void Start()
+    {
+        _foodCount = Random.Range(_foodRange.x, _foodRange.y);
+        _counter.text = _foodCount.ToString();
+    }
+
+    public int Swallow()
+    {
+        Destroy(gameObject);
+        return _foodCount;
+    }
+
+
     //[SerializeField] private Collider _food;
     //[SerializeField] private Player _player;
 
@@ -36,13 +55,13 @@ public class Food : MonoBehaviour
     ////        _player.segmentsCounter.Add(0);
     ////        Debug.Log(_player.segmentsCounter);
     ////    }
-        
+
     ////}
 
     //// Start is called before the first frame update
     //void Start()
     //{
-        
+
     //}
 
     //// Update is called once per frame
