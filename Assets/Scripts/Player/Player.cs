@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LoseScreen _loseScreen;
     [SerializeField] private WinScreen _winScreen;
 
-    [SerializeField] private Camera _mainCamera;
+    [SerializeField] private CameraSetup _mainCamera;
 
     [SerializeField] private ParticleSystem _finishParticleSystem;
     
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
 
     public void Win()
     {
-        _mainCamera.GetComponent<Camera>().enabled = false;
+        _mainCamera.GetComponent<CameraSetup>().enabled = false;
         _finishParticleSystem.Play();
         _winScreen.NextLevel();
     }
